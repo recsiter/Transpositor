@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Download Form</title>
+    </head>
+    <body>
+        <h1>Download Transposed File</h1>
+        <form method="post" action="/transpose">
+            <label for="isFlatFrom">Is the original tone uses flats?</label>
+            <input type="checkbox" id="isFlatFrom" name="isFlatFrom" value="true">
+
+            <label for="isFlatTo">Is the new tone uses flats?</label>
+            <input type="checkbox" id="isFlatTo" name="isFlatTo" value="true">
+
+            <label for="transposeBy">Transpose By</label>
+            <select id="transposeBy" name="transposeBy">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+            </select>
+
+            <input type="hidden" id="filename" name="filename" value="${file.absolutePath}">
+            <button type="submit" name="submit" value="transpose">Transpose</button>
+        </form>
+    </body>
+</html>

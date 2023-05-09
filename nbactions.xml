@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+    <action>
+        <actionName>run</actionName>
+        <packagings>
+            <packaging>jar</packaging>
+        </packagings>
+        <goals>
+            <goal>spring-boot:run</goal>
+        </goals>
+        <properties>
+            <run.jvmArguments>-noverify -XX:TieredStopAtLevel=1</run.jvmArguments>
+            <run.mainClass>com.transpositor.application.TranspositorApplication</run.mainClass>
+            <Env.SPRING_OUTPUT_ANSI_ENABLED>always</Env.SPRING_OUTPUT_ANSI_ENABLED>
+        </properties>
+    </action>
+    <action>
+        <actionName>debug</actionName>
+        <packagings>
+            <packaging>jar</packaging>
+        </packagings>
+        <goals>
+            <goal>spring-boot:run</goal>
+        </goals>
+        <properties>
+            <run.jvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -noverify -XX:TieredStopAtLevel=1</run.jvmArguments>
+            <run.mainClass>com.transpositor.application.TranspositorApplication</run.mainClass>
+            <Env.SPRING_OUTPUT_ANSI_ENABLED>always</Env.SPRING_OUTPUT_ANSI_ENABLED>
+            <jpda.listen>true</jpda.listen>
+        </properties>
+    </action>
+    <action>
+        <actionName>profile</actionName>
+        <packagings>
+            <packaging>jar</packaging>
+        </packagings>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+        </goals>
+        <properties>
+            <exec.args>-classpath %classpath com.transpositor.application.TranspositorApplication</exec.args>
+            <exec.executable>java</exec.executable>
+        </properties>
+    </action>
+    <action>
+            <actionName>CUSTOM-Build WAR</actionName>
+            <displayName>Build WAR</displayName>
+            <goals>
+                <goal>mvn</goal>
+                <goal>package</goal>
+                <goal>-T</goal>
+                <goal>1C</goal>
+                <goal>-Dmaven.compiler.fork=true</goal>
+                <goal>-Dmaven.compiler.executable=/usr/lib/jvm/java-11-openjdk-amd64/bin/javac</goal>
+            </goals>
+        </action>
+</actions>

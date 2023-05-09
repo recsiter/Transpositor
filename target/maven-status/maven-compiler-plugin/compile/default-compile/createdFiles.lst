@@ -1,0 +1,12 @@
+com\transpositor\logic\Transposition.class
+com\transpositor\controller\Controller.class
+com\transpositor\application\TranspositorApplication.class
+com\transpositor\logic\TransposeFlatToFlat.class
+com\transpositor\controller\DocumentModel.class
+com\transpositor\logic\Util.class
+com\transpositor\logic\TransposeSharpToFlat.class
+com\transpositor\logic\Util$1.class
+com\transpositor\logic\TransposeAccord.class
+com\transpositor\logic\TransposeSharpToSharp.class
+com\transpositor\logic\FileHandler.class
+com\transpositor\logic\TransposeFlatToSharp.class
